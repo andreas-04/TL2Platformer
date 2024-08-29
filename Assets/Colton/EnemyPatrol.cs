@@ -9,14 +9,15 @@ public class EnemyPatrol : MonoBehaviour
 {
     [SerializeField] float MoveSpeed = 1f;
     Rigidbody2D MyRigidBody;
-    BoxCollider2D MyCollider;
+    BoxCollider2D MyCollider;   // Terrain Probe
+    CapsuleCollider2D MyCapsuleCollider;    // Hitbox
 
     // Start is called before the first frame update
     void Start()
     {
         MyRigidBody = GetComponent<Rigidbody2D>();
         MyCollider = GetComponent<BoxCollider2D>();
-        
+        MyCapsuleCollider = GetComponent<CapsuleCollider2D>();
     }
 
     // Update is called once per frame
@@ -34,10 +35,22 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Kill Player
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)  // When collider exits another collider
     {
-        // Turn Around
-        transform.localScale = new Vector2(-(Mathf.Sign(MyRigidBody.velocity.x)),transform.localScale.y);
+        if (!collision.gameObject.CompareTag("Player"))
+        {
+            // Turn Around
+            transform.localScale = new Vector2(-(Mathf.Sign(MyRigidBody.velocity.x)), transform.localScale.y);
+        }
+
     }
 
     private bool IsFacingRight()
