@@ -12,12 +12,24 @@ public class Hud : MonoBehaviour
     //text for the hud
     public TextMeshProUGUI hudText;
 
-    public int coins = 1, rubies = 5;
+    public GameManager gameManager;
+    public GameObject gameManagerObject;
+
+    public int coins, rubies;
     
     //called once at beginning
     void Start()
     {
         hud.SetActive(false);
+
+         gameManagerObject = GameObject.FindWithTag("GameController");
+        
+        if (gameManagerObject != null){
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        else {
+            Debug.Log("uh oh! Game Manager not found");
+        } 
     }
 
     // Update is called once per frame
@@ -40,6 +52,8 @@ public class Hud : MonoBehaviour
         hud.SetActive(true);
         Time.timeScale = 0f;
         hudOpen = true;
+        coins = gameManager.GetCoins();
+        rubies = gameManager.GetRubies();
         hudText.SetText("Coins: {0}   Rubies: {1}", coins, rubies);
     }
 
