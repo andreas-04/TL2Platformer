@@ -48,7 +48,8 @@ public class EnemyPatrol : MonoBehaviour
         if (!collision.gameObject.CompareTag("Player"))
         {
             // Turn Around
-            transform.localScale = new Vector2(-(Mathf.Sign(MyRigidBody.velocity.x)), transform.localScale.y);
+            //transform.localScale = new Vector2(-(Mathf.Sign(MyRigidBody.velocity.x)), transform.localScale.y);
+            transform.localScale = new Vector2(-transform.localScale.x, transform.localScale.y);
         }
 
     }
