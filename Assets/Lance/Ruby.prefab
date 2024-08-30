@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5911173896901882773}
   - component: {fileID: 5947856761344110497}
   - component: {fileID: 7889552989110990131}
-  - component: {fileID: -6622944643177289239}
+  - component: {fileID: -2537980945280371516}
   m_Layer: 0
   m_Name: Ruby
   m_TagString: Untagged
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &-6622944643177289239
+--- !u!114 &-2537980945280371516
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,9 +158,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8450356452830189898}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d281c689d470bc40ac7f468723ed3a8, type: 3}
+  m_Script: {fileID: 11500000, guid: e380bf6a19789f942ac5fc14ae36f100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinValue: 1
   gameManagerObject: {fileID: 0}
   gameManager: {fileID: 0}

@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     // Add coin value to score
     public void AddNumRubies() {
+        Debug.Log(numRubiesCollected);
         numRubiesCollected += 1;
     }
 
