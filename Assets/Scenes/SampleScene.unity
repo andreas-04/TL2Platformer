@@ -270,7 +270,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.04, y: 1.68}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -347,7 +347,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 839508921, guid: 8d48968ad5e5a4b5db6a85c3466a1f36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -367,8 +367,8 @@ Transform:
   m_GameObject: {fileID: 694918046}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: -2.03, z: 0}
-  m_LocalScale: {x: 0.6246, y: 2.1262, z: 1}
+  m_LocalPosition: {x: -0.005, y: -2.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -387,6 +387,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7
+  idleSprite: {fileID: 839508921, guid: 8d48968ad5e5a4b5db6a85c3466a1f36, type: 3}
+  runSprite1: {fileID: -1435952505, guid: 8d48968ad5e5a4b5db6a85c3466a1f36, type: 3}
+  runSprite2: {fileID: -1940916933, guid: 8d48968ad5e5a4b5db6a85c3466a1f36, type: 3}
+  airSprite: {fileID: 1988451054, guid: 8d48968ad5e5a4b5db6a85c3466a1f36, type: 3}
 --- !u!1 &1419133807
 GameObject:
   m_ObjectHideFlags: 0
