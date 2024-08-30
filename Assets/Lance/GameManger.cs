@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     }
 
     // Add coin value to score
-    public void AddCoin(int value) {
+    public void AddScore(int value) {
         score += value;
         numCoinsCollected += 1;
     }
