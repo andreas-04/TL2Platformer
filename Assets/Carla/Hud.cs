@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Hud : MonoBehaviour
 {
     //gameObject for the panel
     public GameObject hud;
     public bool hudOpen;
+
+    //text for the hud
+    public TextMeshProUGUI hudText;
+
+    public int coins = 1, rubies = 5;
     
     //called once at beginning
     void Start()
@@ -34,6 +40,7 @@ public class Hud : MonoBehaviour
         hud.SetActive(true);
         Time.timeScale = 0f;
         hudOpen = true;
+        hudText.SetText("Coins: {0}   Rubies: {1}", coins, rubies);
     }
 
     //resumes it, closes hud
