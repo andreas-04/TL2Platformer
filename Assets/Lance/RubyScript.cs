@@ -5,16 +5,23 @@ using UnityEngine;
 public class RubyScript : MonoBehaviour
 {
     float jumpPowerUp = 1f;
-    // Start is called before the first frame update
+    public GameObject gameManagerObject; 
+    public GameManager gameManager; 
+
     void Start()
     {
-        
-    }
+        // Find the GameObject with the tag "GameController"
+        gameManagerObject = GameObject.FindWithTag("GameController");
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // Get the GameManager component from the GameObject
+        if (gameManagerObject != null)
+        {
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        else
+        {
+            Debug.LogError("GameManager GameObject not found with tag 'GameController'.");
+        }
     }
 
     // Call when coin body has collided with another GameObject
