@@ -983,7 +983,7 @@ GameObject:
   - component: {fileID: 1165422035}
   m_Layer: 0
   m_Name: GameManger
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2140,6 +2140,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1241580438}
     m_Modifications:
+    - target: {fileID: -6622944643177289239, guid: 726556005ed85524fb8187a44e6419cb, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1165422034}
     - target: {fileID: 789274655411581097, guid: 726556005ed85524fb8187a44e6419cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.869513

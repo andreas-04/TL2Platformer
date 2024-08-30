@@ -162,3 +162,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 1
+  gameMangerObject: {fileID: 2898832557376675603, guid: 5103ace35fbf05642be9f0d872266cd5, type: 3}
