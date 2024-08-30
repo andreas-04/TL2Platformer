@@ -1784,6 +1784,14 @@ PrefabInstance:
       propertyPath: hudText
       value: 
       objectReference: {fileID: 1739576410}
+    - target: {fileID: 261383945304379424, guid: 1bbad9ccf92077b47953c06a45e7b777, type: 3}
+      propertyPath: m_fontSize
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 261383945304379424, guid: 1bbad9ccf92077b47953c06a45e7b777, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 1885788578522567328, guid: 1bbad9ccf92077b47953c06a45e7b777, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
