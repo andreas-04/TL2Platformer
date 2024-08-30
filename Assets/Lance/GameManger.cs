@@ -26,4 +26,14 @@ public class GameManager : MonoBehaviour
         score += value;
         numCoinsCollected += 1;
     }
+
+    // get number of rubies collected
+    public int GetRubies() {
+        return numRubiesCollected;
+    }
+
+    // get number of coins collected
+    public int GetCoins() {
+        return numCoinsCollected;
+    }
 }
