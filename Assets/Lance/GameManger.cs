@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int numCoinsCollected = 0;
     public int numRubiesCollected = 0;
+    public ScoreBar scoreBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,11 @@ public class GameManager : MonoBehaviour
     public void AddScore(int value) {
         score += value;
         numCoinsCollected += 1;
+        scoreBar.UpdateScoreBar(numCoinsCollected);
+    }
+
+    public void UpdateScoreBar() {
+
     }
 
     // Add coin value to score
