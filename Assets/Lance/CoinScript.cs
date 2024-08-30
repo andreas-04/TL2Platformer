@@ -24,6 +24,7 @@ public class Coin : MonoBehaviour
         }
     }
 
+    // Call when coin body has collided with another GameObject
     void OnTriggerEnter2D(Collider2D other)
     {
         // Check if the object that collided with the coin is the player

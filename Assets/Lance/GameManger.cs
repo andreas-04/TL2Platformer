@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
         numCoinsCollected += 1;
     }
 
+    // Add coin value to score
+    public void AddNumRubies() {
+        numRubiesCollected += 1;
+    }
+
     // get number of rubies collected
     public int GetRubies() {
         return numRubiesCollected;
