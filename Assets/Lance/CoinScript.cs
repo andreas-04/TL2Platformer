@@ -33,7 +33,7 @@ public class Coin : MonoBehaviour
             if (gameManager != null)
             {
                 // Add coin value to player's score
-                gameManager.AddCoin(coinValue);
+                gameManager.AddScore(coinValue);
 
                 // Make the coin disappear
                 gameObject.SetActive(false);
