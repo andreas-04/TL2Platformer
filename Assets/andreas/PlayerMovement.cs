@@ -21,6 +21,12 @@ public class PlayerMovement : MonoBehaviour
     private float animationInterval = 0.1f; // Time between sprite switches
     private bool isRunningSprite1 = true; // Toggle between run sprites
 
+    public GameManager gameManager;
+    public GameObject gameManagerObject;
+
+    public int rubyPower = 1;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,11 +34,26 @@ public class PlayerMovement : MonoBehaviour
 
         // Set the initial sprite to the idle sprite
         spriteRenderer.sprite = idleSprite;
+
+        //for connecting to gameManager
+        gameManagerObject = GameObject.FindWithTag("GameController");
+        
+        if (gameManagerObject != null){
+            gameManager = gameManagerObject.GetComponent<GameManager>();
+        }
+        else {
+            Debug.Log("uh oh! Game Manager not found");
+        } 
     }
 
     private void Update()
     {
         Move();
+        int newrubyPower = gameManager.GetRubies();
+        if (newrubyPower > rubyPower){
+            jumpForce += 1f;
+        } 
+        rubyPower = newrubyPower;
         Jump();
         Animate(); // Handle sprite animation
     }
