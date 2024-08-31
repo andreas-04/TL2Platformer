@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public int score = 0;
     public int numCoinsCollected = 0;
     public int numRubiesCollected = 0;
+    public int numCoinsInLevel = 25;
     public ScoreBar scoreBar;
     // Start is called before the first frame update
     void Start()
@@ -29,8 +30,11 @@ public class GameManager : MonoBehaviour
         scoreBar.UpdateScoreBar(numCoinsCollected);
     }
 
-    public void UpdateScoreBar() {
-
+    // Ends game when all coins have been collected
+    public void EndGame() {
+        if (numCoinsCollected == numCoinsInLevel) {
+            // TODO END THE GAME
+        }
     }
 
     // Add coin value to score
