@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class GameManager : MonoBehaviour
     public int numRubiesCollected = 0;
     public int numCoinsInLevel = 25;
     public ScoreBar scoreBar;
+    public TextMeshProUGUI winMessage;
+    public GameObject gameOverScreen;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +31,7 @@ public class GameManager : MonoBehaviour
         score += value;
         numCoinsCollected += 1;
         scoreBar.UpdateScoreBar(numCoinsCollected);
+        CheckEndGame();
     }
 
     // Ends game when all coins have been collected
@@ -39,14 +43,14 @@ public class GameManager : MonoBehaviour
 
     // Ends game
     public void EndGame() {
-        Debug.Log("Game over");
         if (numCoinsCollected == numCoinsInLevel) {
-            Debug.Log("Player Wins!");
+            winMessage.SetText("You Won");
         } else {
-            Debug.Log("You lost!");
+            winMessage.SetText("You Lost");
         }
 
-        GameObject.FindWithTag("Player").SetActive(false);
+        //GameObject.FindWithTag("Player").SetActive(false);
+        gameOverScreen.SetActive(true);
         Time.timeScale = 0;
     }
 
