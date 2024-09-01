@@ -31,10 +31,23 @@ public class GameManager : MonoBehaviour
     }
 
     // Ends game when all coins have been collected
-    public void EndGame() {
+    public void CheckEndGame() {
         if (numCoinsCollected == numCoinsInLevel) {
-            // TODO END THE GAME
+            EndGame();
         }
+    }
+
+    // Ends game
+    public void EndGame() {
+        Debug.Log("Game over");
+        if (numCoinsCollected == numCoinsInLevel) {
+            Debug.Log("Player Wins!");
+        } else {
+            Debug.Log("You lost!");
+        }
+
+        GameObject.FindWithTag("Player").SetActive(false);
+        Time.timeScale = 0;
     }
 
     // Add coin value to score
