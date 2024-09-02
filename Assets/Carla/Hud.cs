@@ -12,6 +12,7 @@ public class Hud : MonoBehaviour
     //text for the hud
     public TextMeshProUGUI hudText;
 
+    //gameObject for referencing gameManager
     public GameManager gameManager;
     public GameObject gameManagerObject;
 
@@ -35,7 +36,6 @@ public class Hud : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("are you running");
         //checks if user hit tab. will pause if not yet, or resume if paused
         if(Input.GetKeyDown(KeyCode.Tab)){
             Debug.Log("Escape pressed");
@@ -52,9 +52,10 @@ public class Hud : MonoBehaviour
         hud.SetActive(true);
         Time.timeScale = 0f;
         hudOpen = true;
+        //get the number of coins and rubies
         coins = gameManager.GetCoins();
         rubies = gameManager.GetRubies();
-        hudText.SetText("Coins: {0}   Rubies: {1}", coins, rubies);
+        hudText.SetText("Welcome to your hud!\n\n Coins: {0}   Rubies: {1}", coins, rubies);
     }
 
     //resumes it, closes hud
