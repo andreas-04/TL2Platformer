@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject gameManagerObject;
 
     public int rubyPower = 1;
+    private bool isAlive = true;
 
 
     private void Start()
@@ -127,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-        }
+        } 
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -135,6 +136,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        // kill player if collided with enemy
+        if (collision.gameObject.CompareTag("Enemy")) {
+            isAlive = false; 
+            gameManager.EndGame();
         }
     }
 }
