@@ -2667,6 +2667,7 @@ MonoBehaviour:
   scoreBar: {fileID: 1514334934}
   winMessage: {fileID: 1718473825}
   gameOverScreen: {fileID: 1918444785}
+  sceneName: SampleScene
 --- !u!4 &1165422036
 Transform:
   m_ObjectHideFlags: 0
@@ -5627,7 +5628,7 @@ PrefabInstance:
     - target: {fileID: -6622944643177289239, guid: 726556005ed85524fb8187a44e6419cb, type: 3}
       propertyPath: gameManager
       value: 
-      objectReference: {fileID: 1165422035}
+      objectReference: {fileID: 0}
     - target: {fileID: 789274655411581097, guid: 726556005ed85524fb8187a44e6419cb, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.869513

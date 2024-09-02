@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManagerBen : MonoBehaviour
 {
     public int score = 0;
     public int numCoinsCollected = 0;
@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public ScoreBar scoreBar;
     public TextMeshProUGUI winMessage;
     public GameObject gameOverScreen;
-    string sceneName;
+    public string sceneName;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +21,12 @@ public class GameManager : MonoBehaviour
         score = 0;
         numCoinsCollected = 0;
         numRubiesCollected = 0;
-        // get the current scene so we can reload it when we want to
-        sceneName = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // makes it so the user can restart the game whenever they want by pressing r
+        // makes it so the user can restart the game whenever they want
         if( Input.GetKeyDown("r") ){
             RestartGame();
         }
