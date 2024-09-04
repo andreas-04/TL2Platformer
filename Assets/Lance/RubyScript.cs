@@ -8,6 +8,13 @@ public class RubyScript : MonoBehaviour
     public GameObject gameManagerObject; 
     public GameManager gameManager; 
 
+
+    public AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         // Find the GameObject with the tag "GameController"
@@ -40,6 +47,8 @@ public class RubyScript : MonoBehaviour
 
                 // Make the coin disappear
                 gameObject.SetActive(false);
+                audioManager.PlaySFX(audioManager.coinget);
+
             }
             else
             {

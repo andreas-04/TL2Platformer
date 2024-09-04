@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+
 public class GameManager : MonoBehaviour
 {
     public int score = 0;
@@ -12,12 +13,20 @@ public class GameManager : MonoBehaviour
     public ScoreBar scoreBar;
     public TextMeshProUGUI winMessage;
     public GameObject gameOverScreen;
+
+    public AudioManager audioManager;
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         numCoinsCollected = 0;
         numRubiesCollected = 0;
+        AudioListener.pause = false;
     }
 
     // Update is called once per frame
@@ -45,8 +54,12 @@ public class GameManager : MonoBehaviour
     public void EndGame() {
         if (numCoinsCollected == numCoinsInLevel) {
             winMessage.SetText("You Won");
+            AudioListener.pause = true;
+            audioManager.PlaySFX(audioManager.win);
         } else {
             winMessage.SetText("You Lost");
+            AudioListener.pause = true;
+            audioManager.PlaySFX(audioManager.dead);
         }
 
         //GameObject.FindWithTag("Player").SetActive(false);

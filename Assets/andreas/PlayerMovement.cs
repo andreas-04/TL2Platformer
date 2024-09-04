@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer; // Reference to SpriteRenderer
-    private bool isGrounded;
+    private bool isGrounded = true;
 
     private float animationTimer = 0f; // Timer to switch between run sprites
     private float animationInterval = 0.1f; // Time between sprite switches
@@ -27,6 +27,12 @@ public class PlayerMovement : MonoBehaviour
     public int rubyPower = 1;
     private bool isAlive = true;
 
+    public AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -82,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            audioManager.PlaySFX(audioManager.jump);
             isGrounded = false;
         }
     }
